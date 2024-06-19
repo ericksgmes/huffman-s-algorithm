@@ -34,24 +34,6 @@ ABACCDA
 Digite um comando: exit
 ```
 
-### O que será avaliado
-
-- Cumprimento dos requisitos
-- Corretude da solução
-- Qualidade da implementação
-- Nomenclatura adequada de variáveis e funções
-- Uso adequado da memória
-- Funções pequenas e coesas
-
-### Observações Importantes
-
-- Este trabalho possui peso 2.
-- O trabalho deve ser feito em grupos de no máximo três pessoas.
-- A data de entrega estará informada no Moodle.
-- A submissão deve ser feita por apenas um integrante do grupo.
-  - Deve-se submeter o link para o repositório no GitHub.
-- Plágios terão nota zero.
-
 ### Estrutura do Código
 
 #### Arquivos Principais
