@@ -14,6 +14,6 @@ typedef struct node{
 typedef struct {
     Node *first;
     int size;
-};
+} List;
 
 #endif //ORDERED_LIST_H

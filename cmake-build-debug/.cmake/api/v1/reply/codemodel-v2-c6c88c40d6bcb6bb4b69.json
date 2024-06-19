@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "algoritmoHuffman",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "algoritmoHuffman::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-algoritmoHuffman-Debug-4369bd2028a2be13f36e.json",
+					"name" : "algoritmoHuffman",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/erickgomes/Documents/IFSP-ADS/IF-SCL-2024.1/ESDD/algoritmoHuffman/cmake-build-debug",
+		"source" : "/Users/erickgomes/Documents/IFSP-ADS/IF-SCL-2024.1/ESDD/algoritmoHuffman"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
