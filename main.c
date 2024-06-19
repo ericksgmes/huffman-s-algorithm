@@ -1,5 +1,7 @@
 #include <locale.h>
 #include <stdio.h>
+
+#include "dict.h"
 #include "freq_table.h"
 #include "ordered_list.h"
 
@@ -21,5 +23,9 @@ int main(void) {
     Node *tree;
     tree = create_huffman_tree(&list);
     print_tree(tree, 0);
+    int altura = tree_height(tree) + 1;
+    char **dict = alloc_dict(altura);
+    create_dict(dict, tree, "", altura);
+    print_dict(dict);
     return 0;
 }

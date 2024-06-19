@@ -4,3 +4,9 @@
 5	214	1718809945621428364	CMakeFiles/algoritmoHuffman.dir/freq_table.c.o	c7ea53c6aacd9c61
 2	143	1718815709429802901	CMakeFiles/algoritmoHuffman.dir/main.c.o	9c3d6ec2282098a7
 1	57	1718817138939523032	build.ninja	cf70c05a9aef7498
+1	193	1718817877516779730	CMakeFiles/algoritmoHuffman.dir/main.c.o	9c3d6ec2282098a7
+2	194	1718817877517409373	CMakeFiles/algoritmoHuffman.dir/ordered_list.c.o	d3e7eba5f5a82ba9
+2	194	1718817877517060363	CMakeFiles/algoritmoHuffman.dir/dict.c.o	92fd732a68148f6d
+194	319	1718817877641982370	algoritmoHuffman	604029f5ce05ff18
+1	168	1718817952014840644	CMakeFiles/algoritmoHuffman.dir/dict.c.o	92fd732a68148f6d
+169	258	1718817952104214125	algoritmoHuffman	604029f5ce05ff18
