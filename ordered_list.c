@@ -3,3 +3,10 @@
 //
 
 #include "ordered_list.h"
+
+#include <stddef.h>
+
+void create_list(List *list) {
+    list->first = NULL;
+    list->size = 0;
+}
