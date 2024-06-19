@@ -52,3 +52,13 @@ void fill_list(unsigned int tab[], List *list) {
         }
     }
 }
+
+void print_list(List *list) {
+    Node *aux = list->first;
+
+    printf("\tLista ordenada: Tamanho: %d\n", list->size);
+    while (aux) {
+        printf("\tCaracter: %c Frequência: %d\n", aux->caracter, aux->frequencia);
+        aux = aux->next;
+    }
+}
