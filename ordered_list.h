@@ -16,4 +16,6 @@ typedef struct {
     int size;
 } List;
 
+void create_list(List *list);
+
 #endif //ORDERED_LIST_H
