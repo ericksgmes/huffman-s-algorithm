@@ -20,14 +20,19 @@ void fill_ft(unsigned char texto[], unsigned int tab[]){
     }
 }
 
-void imprime_tab_frequencia(unsigned int tab[]){
-    for(int i = 0; i < TAM; i++){
-        printf("\t%d = %d = %c\n", i, tab[i], i);
+void ft_print(unsigned int tab[]){
+    int i;
+
+    printf("\tTABELA DE FREQUENCIA\n");
+    for(i = 0; i < TAM; i++) {
+        if (tab[i] > 0) {
+            printf("\tFreq: %u = %c\n", tab[i], i);
+        }
     }
 }
 
-// Não realize alocação dinâmica nesta tabela, pois
-// ela tem que ter o tamanho da tabela ASCII 256
+// Não realizei alocação dinâmica nesta tabela, pois
+// ela tem um tamanho limitado à tabela ASCII
 
 // char pode armazenar valores de -128 a 127.
 // unsigned char pode armazenar valores de 0 a 255.

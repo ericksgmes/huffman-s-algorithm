@@ -1,0 +1,21 @@
+# ninja log v5
+1	188	1718807640772304531	CMakeFiles/algoritmoHuffman.dir/main.c.o	9c3d6ec2282098a7
+2	188	1718807640772315698	CMakeFiles/algoritmoHuffman.dir/freq_table.c.o	c7ea53c6aacd9c61
+189	312	1718807640893265267	algoritmoHuffman	f7a77e8d6d153cdc
+1	151	1718807739133116948	CMakeFiles/algoritmoHuffman.dir/freq_table.c.o	c7ea53c6aacd9c61
+151	244	1718807739225452736	algoritmoHuffman	f7a77e8d6d153cdc
+1	149	1718807801860979106	CMakeFiles/algoritmoHuffman.dir/main.c.o	9c3d6ec2282098a7
+149	234	1718807801945061826	algoritmoHuffman	f7a77e8d6d153cdc
+1	147	1718807842658605230	CMakeFiles/algoritmoHuffman.dir/freq_table.c.o	c7ea53c6aacd9c61
+148	236	1718807842746946608	algoritmoHuffman	f7a77e8d6d153cdc
+1	145	1718807938985805097	CMakeFiles/algoritmoHuffman.dir/freq_table.c.o	c7ea53c6aacd9c61
+145	230	1718807939070665929	algoritmoHuffman	f7a77e8d6d153cdc
+1	148	1718807962533301593	CMakeFiles/algoritmoHuffman.dir/main.c.o	9c3d6ec2282098a7
+148	234	1718807962618423965	algoritmoHuffman	f7a77e8d6d153cdc
+5	148	1718807985222721055	CMakeFiles/algoritmoHuffman.dir/main.c.o	9c3d6ec2282098a7
+149	234	1718807985306579806	algoritmoHuffman	f7a77e8d6d153cdc
+1	33	1718807992613130556	CMakeFiles/algoritmoHuffman.dir/main.c.o	9c3d6ec2282098a7
+33	59	1718807992637870566	algoritmoHuffman	f7a77e8d6d153cdc
+2	140	1718808083246244306	CMakeFiles/algoritmoHuffman.dir/main.c.o	9c3d6ec2282098a7
+2	141	1718808083246244389	CMakeFiles/algoritmoHuffman.dir/freq_table.c.o	c7ea53c6aacd9c61
+141	228	1718808083332972577	algoritmoHuffman	f7a77e8d6d153cdc
