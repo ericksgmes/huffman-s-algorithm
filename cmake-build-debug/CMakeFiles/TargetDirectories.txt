@@ -1,0 +1,3 @@
+/Users/erickgomes/Documents/IFSP-ADS/IF-SCL-2024.1/ESDD/algoritmoHuffman/cmake-build-debug/CMakeFiles/algoritmoHuffman.dir
+/Users/erickgomes/Documents/IFSP-ADS/IF-SCL-2024.1/ESDD/algoritmoHuffman/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/erickgomes/Documents/IFSP-ADS/IF-SCL-2024.1/ESDD/algoritmoHuffman/cmake-build-debug/CMakeFiles/rebuild_cache.dir
