@@ -57,16 +57,17 @@ int calculate_string_length(char **dictionary, char *text) {
     return length + 1;
 }
 
-char* encode(char **dictionary, unsigned char *text) {
-    int i = 0, length = calculate_string_length(dictionary, text);
-    char *code = calloc(length, sizeof(char));
-
-    while (text[i] != '\0') {
-        strcat(code, dictionary[text[i]]);
-        i++;
+char* encode_str(char **dict, const unsigned char *str) { // Ajuste aqui
+    int len = 0;
+    for (int i = 0; str[i]; i++) {
+        len += strlen(dict[str[i]]);
     }
-
-    return code;
+    char *encoded = (char *)malloc(len + 1);
+    encoded[0] = '\0';
+    for (int i = 0; str[i]; i++) {
+        strcat(encoded, dict[str[i]]);
+    }
+    return encoded;
 }
 
 char *decode(unsigned char text[], Node *root) {
@@ -91,4 +92,17 @@ char *decode(unsigned char text[], Node *root) {
     }
 
     return decoded;
+}
+
+int min_bits(int *freq_table) {
+    int bits = 0, symbols = 0;
+    for (int i = 0; i < TAM; i++) {
+        if (freq_table[i] > 0) {
+            symbols++;
+        }
+    }
+    while (symbols >>= 1) {
+        bits++;
+    }
+    return bits;
 }

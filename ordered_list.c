@@ -1,13 +1,7 @@
-//
-// Created by Erick Gomes on 19/06/24.
-//
-
 #include "ordered_list.h"
-
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "freq_table.h"
 
 void create_list(List *list) {
@@ -18,8 +12,7 @@ void create_list(List *list) {
 void insert_list(List *list, Node *node) {
     if (list->first == NULL) {
         list->first = node;
-    }
-    else if (node->frequencia < list->first->frequencia) {
+    } else if (node->frequencia < list->first->frequencia) {
         node->next = list->first;
         list->first = node;
     } else {
@@ -36,7 +29,7 @@ void fill_list(unsigned int tab[], List *list) {
     int i;
     for (i = 0; i < TAM; i++) {
         if (tab[i] > 0) {
-            Node *new = malloc(sizeof(Node));
+            Node *new = (Node *)malloc(sizeof(Node));
             if (new) {
                 new->caracter = i;
                 new->frequencia = tab[i];
@@ -46,16 +39,16 @@ void fill_list(unsigned int tab[], List *list) {
 
                 insert_list(list, new);
             } else {
-                printf("\tMemory allocation ERROR!\n");
+                printf("\tErro de alocação de memória!\n");
                 break;
             }
         }
     }
+    printf("Lista preenchida: Tamanho: %d\n", list->size); // Debug: Verificar tamanho da lista
 }
 
 void print_list(List *list) {
     Node *aux = list->first;
-
     printf("\tLista ordenada: Tamanho: %d\n", list->size);
     while (aux) {
         printf("\tCaracter: %c Frequência: %d\n", aux->caracter, aux->frequencia);
@@ -63,9 +56,8 @@ void print_list(List *list) {
     }
 }
 
-Node * remove_first(List *list) {
+Node *remove_first(List *list) {
     Node *aux = NULL;
-
     if (list->first) {
         aux = list->first;
         list->first = aux->next;
@@ -75,12 +67,12 @@ Node * remove_first(List *list) {
     return aux;
 }
 
-Node * create_huffman_tree(List *list) {
+Node *create_huffman_tree(List *list) {
     Node *primeiro, *segundo, *novo;
     while (list->size > 1) {
         primeiro = remove_first(list);
         segundo = remove_first(list);
-        novo = malloc(sizeof(Node));
+        novo = (Node *)malloc(sizeof(Node));
 
         if (novo) {
             novo->caracter = '+';
@@ -91,7 +83,7 @@ Node * create_huffman_tree(List *list) {
 
             insert_list(list, novo);
         } else {
-            printf("\n\tERRO ao alocar memoria em montar_arvore!\n");
+            printf("\n\tErro ao alocar memória em criar árvore de Huffman!\n");
             break;
         }
     }
@@ -103,24 +95,25 @@ void print_tree(Node *root, int size) {
     if (root->left == NULL && root->right == NULL)
         printf("\tFolha: %c\tAltura: %d\n", root->caracter, size);
     else {
-        print_tree(root->left, size + 1);
-        print_tree(root->right, size + 1);
+        if (root->left) {
+            print_tree(root->left, size + 1);
+        }
+        if (root->right) {
+            print_tree(root->right, size + 1);
+        }
     }
 }
 
 int tree_height(Node *root) {
     int lft, rgt;
-
     if (root == NULL)
         return -1;
     else {
         lft = tree_height(root->left) + 1;
         rgt = tree_height(root->right) + 1;
-
         if (lft > rgt)
             return lft;
         else
             return rgt;
     }
 }
-
