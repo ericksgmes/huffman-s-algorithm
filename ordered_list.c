@@ -44,7 +44,6 @@ void fill_list(unsigned int tab[], List *list) {
             }
         }
     }
-    printf("Lista preenchida: Tamanho: %d\n", list->size); // Debug: Verificar tamanho da lista
 }
 
 void print_list(List *list) {

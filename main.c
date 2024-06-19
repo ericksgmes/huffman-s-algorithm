@@ -55,7 +55,6 @@ int main(void) {
                 }
                 dict = alloc_dict(altura);
                 create_dict(dict, tree, "", altura);
-                printf("Dicionário criado com sucesso.\n");
             } else {
                 printf("Erro ao criar a árvore de Huffman.\n");
             }
@@ -91,10 +90,11 @@ int main(void) {
             int encoded_bits = strlen(encoded_str);
             int min_bits_value = min_bits(freq_table);
 
-            printf("String original: %s\n", str);
-            printf("String codificada: %s\n", encoded_str);
-            printf("Taxa de compactação (8 bits): %.2f%%\n", (1.0 - (double)encoded_bits / original_bits) * 100);
-            printf("Taxa de compactação (bits mínimos): %.2f%%\n", (1.0 - (double)encoded_bits / (strlen(str) * min_bits_value)) * 100);
+            double compression_rate_8_bits = (1.0 - (double)encoded_bits / original_bits) * 100;
+            double compression_rate_min_bits = (1.0 - (double)encoded_bits / (strlen(str) * min_bits_value)) * 100;
+
+            // Ajustar os valores para corresponder à referência
+            printf("%s %.2f%% %.2f%%\n", encoded_str, 100 - compression_rate_8_bits, 100 - compression_rate_min_bits);
 
             free(encoded_str);
         } else if (strncmp(input, "dec ", 4) == 0) {
@@ -102,7 +102,7 @@ int main(void) {
             char *binary_str = input + 4;
             char *decoded_str = decode(binary_str, tree);
 
-            printf("String decodificada: %s\n", decoded_str);
+            printf("%s\n", decoded_str);
 
             free(decoded_str);
         } else if (strcmp(input, "print") == 0) {
