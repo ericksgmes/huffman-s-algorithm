@@ -67,6 +67,12 @@ build CMakeFiles/algoritmoHuffman.dir/ordered_list.c.o: C_COMPILER__algoritmoHuf
   OBJECT_DIR = CMakeFiles/algoritmoHuffman.dir
   OBJECT_FILE_DIR = CMakeFiles/algoritmoHuffman.dir
 
+build CMakeFiles/algoritmoHuffman.dir/dict.c.o: C_COMPILER__algoritmoHuffman_unscanned_Debug /Users/erickgomes/Documents/IFSP-ADS/IF-SCL-2024.1/ESDD/algoritmoHuffman/dict.c || cmake_object_order_depends_target_algoritmoHuffman
+  DEP_FILE = CMakeFiles/algoritmoHuffman.dir/dict.c.o.d
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/algoritmoHuffman.dir
+  OBJECT_FILE_DIR = CMakeFiles/algoritmoHuffman.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target algoritmoHuffman
@@ -75,7 +81,7 @@ build CMakeFiles/algoritmoHuffman.dir/ordered_list.c.o: C_COMPILER__algoritmoHuf
 #############################################
 # Link the executable algoritmoHuffman
 
-build algoritmoHuffman: C_EXECUTABLE_LINKER__algoritmoHuffman_Debug CMakeFiles/algoritmoHuffman.dir/main.c.o CMakeFiles/algoritmoHuffman.dir/freq_table.c.o CMakeFiles/algoritmoHuffman.dir/ordered_list.c.o
+build algoritmoHuffman: C_EXECUTABLE_LINKER__algoritmoHuffman_Debug CMakeFiles/algoritmoHuffman.dir/main.c.o CMakeFiles/algoritmoHuffman.dir/freq_table.c.o CMakeFiles/algoritmoHuffman.dir/ordered_list.c.o CMakeFiles/algoritmoHuffman.dir/dict.c.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/algoritmoHuffman.dir
   POST_BUILD = :

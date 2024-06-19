@@ -8,4 +8,6 @@ add_executable(algoritmoHuffman main.c
         freq_table.h
         ordered_list.c
         ordered_list.h
+        dict.c
+        dict.h
 )
