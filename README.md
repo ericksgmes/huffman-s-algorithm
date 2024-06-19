@@ -1,6 +1,3 @@
-Claro! Aqui está um exemplo de um arquivo `README.md` para o projeto:
-
-```markdown
 # Projeto Huffman
 
 Este é um projeto que implementa a codificação e decodificação de Huffman. Ele permite adicionar frequências de caracteres, calcular a árvore de Huffman e seu dicionário de códigos, codificar strings e decodificar sequências binárias.
