@@ -75,3 +75,28 @@ Node * remove_first(List *list) {
     return aux;
 }
 
+Node* create_huffman_tree(List *lista) {
+    Node *primeiro, *segundo, *novo;
+    while (lista->size > 1) {
+        primeiro = remove_first(lista);
+        segundo = remove_first(lista);
+        novo = malloc(sizeof(Node));
+
+        if (novo) {
+            novo->caracter = '+';
+            novo->frequencia = primeiro->frequencia + segundo->frequencia;
+            novo->left = primeiro;
+            novo->right = segundo;
+            novo->next = NULL;
+
+            insert_list(lista, novo);
+        } else {
+            printf("\n\tERRO ao alocar memoria em montar_arvore!\n");
+            break;
+        }
+    }
+
+    return lista->first;
+}
+
+
