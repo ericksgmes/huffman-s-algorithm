@@ -62,3 +62,16 @@ void print_list(List *list) {
         aux = aux->next;
     }
 }
+
+Node * remove_first(List *list) {
+    Node *aux = NULL;
+
+    if (list->first) {
+        aux = list->first;
+        list->first = aux->next;
+        aux->next = NULL;
+        list->size--;
+    }
+    return aux;
+}
+
