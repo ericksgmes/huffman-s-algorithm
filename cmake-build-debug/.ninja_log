@@ -1,4 +1,5 @@
 # ninja log v5
-2	140	1718808083246244306	CMakeFiles/algoritmoHuffman.dir/main.c.o	9c3d6ec2282098a7
-2	141	1718808083246244389	CMakeFiles/algoritmoHuffman.dir/freq_table.c.o	c7ea53c6aacd9c61
-141	228	1718808083332972577	algoritmoHuffman	f7a77e8d6d153cdc
+3	154	1718809997133629147	CMakeFiles/algoritmoHuffman.dir/main.c.o	9c3d6ec2282098a7
+5	214	1718809945621428364	CMakeFiles/algoritmoHuffman.dir/freq_table.c.o	c7ea53c6aacd9c61
+155	248	1718809997226188289	algoritmoHuffman	396ae5982aded3f6
+5	214	1718809945621493154	CMakeFiles/algoritmoHuffman.dir/ordered_list.c.o	d3e7eba5f5a82ba9
