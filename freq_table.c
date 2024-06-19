@@ -11,13 +11,8 @@ void initialize_frequency_table(unsigned int tab[]){
         tab[i] = 0;
 }
 
-void fill_ft(unsigned char texto[], unsigned int tab[]){
-    int i = 0;
-
-    while(texto[i] != '\0'){
-        tab[texto[i]]++;
-        i++;
-    }
+void fill_ft(unsigned char c, unsigned int *freq_table) {
+    freq_table[c]++;
 }
 
 void ft_print(unsigned int tab[]){
