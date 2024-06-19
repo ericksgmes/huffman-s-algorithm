@@ -5,4 +5,6 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(algoritmoHuffman main.c
         freq_table.c
-        freq_table.h)
+        freq_table.h
+        ordered_list.c
+        ordered_list.h)
