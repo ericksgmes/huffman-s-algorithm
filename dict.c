@@ -47,3 +47,48 @@ void print_dict(char ** dict) {
         }
     }
 }
+
+int calculate_string_length(char **dictionary, char *text) {
+    int i = 0, length = 0;
+    while (text[i] != '\0') {
+        length = length + strlen(dictionary[text[i]]);
+        i++;
+    }
+    return length + 1;
+}
+
+char* encode(char **dictionary, unsigned char *text) {
+    int i = 0, length = calculate_string_length(dictionary, text);
+    char *code = calloc(length, sizeof(char));
+
+    while (text[i] != '\0') {
+        strcat(code, dictionary[text[i]]);
+        i++;
+    }
+
+    return code;
+}
+
+char *decode(unsigned char text[], Node *root) {
+    int i = 0;
+    Node *aux = root;
+    char temp[2];
+    char *decoded = calloc(strlen(text), sizeof(char));
+
+    while (text[i] != '\0') {
+        if (text[i] == '0')
+            aux = aux->left;
+        else
+            aux = aux->right;
+
+        if (aux->left == NULL && aux->right == NULL) {
+            temp[0] = aux->caracter;
+            temp[1] = '\0';
+            strcat(decoded, temp);
+            aux = root;
+        }
+        i++;
+    }
+
+    return decoded;
+}
