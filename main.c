@@ -17,6 +17,24 @@ void print_frequencies_and_codes(char **dict, unsigned int *freq_table) {
     }
 }
 
+void clear_data(unsigned int *freq_table, List *list, Node **tree, char ***dict) {
+    initialize_frequency_table(freq_table);
+    create_list(list);
+    if (*tree) {
+        free(*tree);
+        *tree = NULL;
+    }
+    if (*dict) {
+        for (int i = 0; i < TAM; i++) {
+            if ((*dict)[i]) {
+                free((*dict)[i]);
+            }
+        }
+        free(*dict);
+        *dict = NULL;
+    }
+}
+
 int main(void) {
     unsigned int freq_table[TAM];
     List list;
@@ -111,6 +129,8 @@ int main(void) {
             } else {
                 printf("Dicionário não criado. Use o comando 'calc' primeiro.\n");
             }
+        } else if (strcmp(input, "clear") == 0) {
+            clear_data(freq_table, &list, &tree, &dict);
         } else if (strcmp(input, "exit") == 0) {
             break;
         } else {
