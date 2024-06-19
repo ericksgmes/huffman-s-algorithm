@@ -5,6 +5,10 @@
 #include "ordered_list.h"
 
 #include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "freq_table.h"
 
 void create_list(List *list) {
     list->first = NULL;
@@ -26,4 +30,25 @@ void insert_list(List *list, Node *node) {
         aux->next = node;
     }
     list->size++;
+}
+
+void fill_list(unsigned int tab[], List *list) {
+    int i;
+    for (i = 0; i < TAM; i++) {
+        if (tab[i] > 0) {
+            Node *new = malloc(sizeof(Node));
+            if (new) {
+                new->caracter = i;
+                new->frequencia = tab[i];
+                new->right = NULL;
+                new->left = NULL;
+                new->next = NULL;
+
+                insert_list(list, new);
+            } else {
+                printf("\tMemory allocation ERROR!\n");
+                break;
+            }
+        }
+    }
 }
