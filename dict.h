@@ -11,6 +11,6 @@ void create_dict(char** dict, Node *root, char *path, int columns);
 void print_dict(char ** dict);
 int calculate_string_length(char **dictionary, char *text);
 char* encode_str(char **dict, const unsigned char *str);
-char *decode(unsigned char text[], Node *root);
-int min_bits(int *freq_table);
+char *decode(char * text, Node *root);
+int min_bits(unsigned int *freq_table);
 #endif //DICT_H

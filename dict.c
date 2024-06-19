@@ -70,7 +70,7 @@ char* encode_str(char **dict, const unsigned char *str) { // Ajuste aqui
     return encoded;
 }
 
-char *decode(unsigned char text[], Node *root) {
+char *decode(char * text, Node *root) {
     int i = 0;
     Node *aux = root;
     char temp[2];
@@ -94,7 +94,7 @@ char *decode(unsigned char text[], Node *root) {
     return decoded;
 }
 
-int min_bits(int *freq_table) {
+int min_bits(unsigned int *freq_table) {
     int bits = 0, symbols = 0;
     for (int i = 0; i < TAM; i++) {
         if (freq_table[i] > 0) {

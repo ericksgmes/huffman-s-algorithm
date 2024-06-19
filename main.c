@@ -9,11 +9,19 @@
 
 #define TAM 256
 
+void print_frequencies_and_codes(char **dict, unsigned int *freq_table) {
+    for (int i = 0; i < TAM; i++) {
+        if (freq_table[i] > 0) {
+            printf("%c com frequencia %u codificado como %s\n", i, freq_table[i], dict[i] ? dict[i] : "(null)");
+        }
+    }
+}
+
 int main(void) {
     unsigned int freq_table[TAM];
     List list;
-    Node *tree;
-    char *dict[TAM] = { NULL };  // Alocação do dicionário de códigos
+    Node *tree = NULL;
+    char **dict = NULL; // Alocação do dicionário de códigos
     char input[TAM];
     setlocale(LC_ALL, "Portuguese");
     initialize_frequency_table(freq_table);
@@ -35,9 +43,22 @@ int main(void) {
             create_list(&list);
             fill_list(freq_table, &list);
             tree = create_huffman_tree(&list);
-            int altura = tree_height(tree) + 1;
-            char **dict = alloc_dict(altura);
-            create_dict(dict, tree, "", altura);
+            if (tree) {
+                int altura = tree_height(tree) + 1;
+                if (dict != NULL) {
+                    for (int i = 0; i < TAM; i++) {
+                        if (dict[i]) {
+                            free(dict[i]);
+                        }
+                    }
+                    free(dict);
+                }
+                dict = alloc_dict(altura);
+                create_dict(dict, tree, "", altura);
+                printf("Dicionário criado com sucesso.\n");
+            } else {
+                printf("Erro ao criar a árvore de Huffman.\n");
+            }
         } else if (strncmp(input, "cod ", 4) == 0) {
             initialize_frequency_table(freq_table);
             create_list(&list);
@@ -53,7 +74,15 @@ int main(void) {
                 continue;
             }
             int altura = tree_height(tree) + 1;
-            char **dict = alloc_dict(altura);
+            if (dict != NULL) {
+                for (int i = 0; i < TAM; i++) {
+                    if (dict[i]) {
+                        free(dict[i]);
+                    }
+                }
+                free(dict);
+            }
+            dict = alloc_dict(altura);
             create_dict(dict, tree, "", altura);
 
             // Encode the string
@@ -68,24 +97,20 @@ int main(void) {
             printf("Taxa de compactação (bits mínimos): %.2f%%\n", (1.0 - (double)encoded_bits / (strlen(str) * min_bits_value)) * 100);
 
             free(encoded_str);
-
-            for (int i = 0; i < altura; i++) {
-                if (dict[i]) {
-                    free(dict[i]);
-                }
-            }
-            free(dict);
         } else if (strncmp(input, "dec ", 4) == 0) {
 
-            // Decode the binary string
             char *binary_str = input + 4;
             char *decoded_str = decode(binary_str, tree);
 
-            // Output the decoded string
             printf("String decodificada: %s\n", decoded_str);
 
-            // Free decoded string
             free(decoded_str);
+        } else if (strcmp(input, "print") == 0) {
+            if (dict) {
+                print_frequencies_and_codes(dict, freq_table);
+            } else {
+                printf("Dicionário não criado. Use o comando 'calc' primeiro.\n");
+            }
         } else if (strcmp(input, "exit") == 0) {
             break;
         } else {
@@ -93,11 +118,13 @@ int main(void) {
         }
     }
 
-    // Liberação de memória do dicionário
     for (int i = 0; i < TAM; i++) {
-        if (dict[i]) {
+        if (dict && dict[i]) {
             free(dict[i]);
         }
+    }
+    if (dict) {
+        free(dict);
     }
 
     return 0;
