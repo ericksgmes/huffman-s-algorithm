@@ -99,4 +99,13 @@ Node* create_huffman_tree(List *lista) {
     return lista->first;
 }
 
+void print_tree(Node *root, int size) {
+    if (root->left == NULL && root->right == NULL)
+        printf("\tFolha: %c\tAltura: %d\n", root->caracter, size);
+    else {
+        print_tree(root->left, size + 1);
+        print_tree(root->right, size + 1);
+    }
+}
+
 
