@@ -75,6 +75,17 @@ int main(void) {
                 }
             }
             free(dict);
+        } else if (strncmp(input, "dec ", 4) == 0) {
+
+            // Decode the binary string
+            char *binary_str = input + 4;
+            char *decoded_str = decode(binary_str, tree);
+
+            // Output the decoded string
+            printf("String decodificada: %s\n", decoded_str);
+
+            // Free decoded string
+            free(decoded_str);
         } else if (strcmp(input, "exit") == 0) {
             break;
         } else {
